@@ -5,4 +5,4 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="BubblePlaceholder" parent="." instance=ExtResource("1_46jlw")]
-position = Vector2(1399, 1477)
+position = Vector2(1417, 698)
