@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhraq0e485r8t"]
+
+[ext_resource type="Texture2D" uid="uid://rdam26yjqc8o" path="res://Art/Sprites/Bubble placeholder.svg" id="1_ivtlu"]
+
+[node name="BubblePlaceholder" type="Sprite2D"]
+scale = Vector2(0.873534, 0.873534)
+texture = ExtResource("1_ivtlu")

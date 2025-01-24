@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=2 format=3 uid="uid://biudnj2x84urg"]
+
+[ext_resource type="PackedScene" uid="uid://dhraq0e485r8t" path="res://Prefabs/Bubble.tscn" id="1_46jlw"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BubblePlaceholder" parent="." instance=ExtResource("1_46jlw")]
+position = Vector2(1399, 1477)
