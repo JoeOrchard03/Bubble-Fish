@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=3 format=3 uid="uid://biudnj2x84urg"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cbpok72dqco55" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
+[ext_resource type="PackedScene" uid="uid://7upowc3qaycv" path="res://Prefabs/net.tscn" id="2_frgy2"]
+
+[node name="MainSceneRoot" type="Node2D"]
+
+[node name="ControlLogic" parent="." node_paths=PackedStringArray("net") instance=ExtResource("1_g8jgy")]
+net = NodePath("../Net")
+
+[node name="Net" parent="." instance=ExtResource("2_frgy2")]
+position = Vector2(1127, 730)
+gravity_scale = 0.0

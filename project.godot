@@ -18,7 +18,12 @@ config/icon="res://Art/Placeholder/icon.svg"
 
 window/size/viewport_width=2560
 window/size/viewport_height=1440
-window/size/resizable=false
+window/size/mode=2
+window/stretch/mode="viewport"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

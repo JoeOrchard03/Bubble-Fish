@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbpok72dqco55"]
+
+[ext_resource type="Script" path="res://Scripts/control_logic.gd" id="1_t85nt"]
+
+[node name="ControlLogic" type="Node2D"]
+script = ExtResource("1_t85nt")
