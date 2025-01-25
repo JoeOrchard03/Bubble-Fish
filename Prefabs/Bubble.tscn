@@ -10,6 +10,8 @@ size = Vector2(19.8174, 18.4908)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_ivtlu")
 script = ExtResource("2_2v464")
+minExistenceTime = 2.0
+maxExistenceTime = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 

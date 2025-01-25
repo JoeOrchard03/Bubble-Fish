@@ -6,7 +6,5 @@
 
 [node name="BubbleSpawner" parent="." instance=ExtResource("1_nro5v")]
 bubbleImgRadius = 128
-
-[node name="SpawnDelay" type="Timer" parent="."]
-
-[connection signal="timeout" from="SpawnDelay" to="BubbleSpawner" method="_on_spawn_delay_timeout"]
+minimumSpawnDelay = 0.25
+maximumSpawnDelay = 1

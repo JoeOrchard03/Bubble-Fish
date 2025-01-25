@@ -5,3 +5,8 @@
 [node name="BubbleSpawner" type="Node2D"]
 script = ExtResource("1_4irda")
 numOfBubbles = 8
+maximumSpawnDelay = 3
+
+[node name="SpawnDelay" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnDelay" to="." method="_on_spawn_delay_timeout"]

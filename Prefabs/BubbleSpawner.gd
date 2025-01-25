@@ -8,8 +8,8 @@ var rng = RandomNumberGenerator.new()
 @export var bubbleImgRadius = 85
 @export var bubblePrefab = preload("res://Prefabs/Bubble.tscn")
 
-@export var minimumSpawnDelay = 2.5
-@export var maximumSpawnDelay = 5
+@export var minimumSpawnDelay = 0.5
+@export var maximumSpawnDelay = 1
 
 var positions:Array[Vector2] = []
 
@@ -17,8 +17,6 @@ func _ready():
 	screenHeight = get_viewport().size
 	for i in numOfBubbles:
 		Spawn()
-	var delay = randf_range(minimumSpawnDelay, maximumSpawnDelay)
-	$SpawnDelay.start(delay)
 	
 
 func RandomPositions() -> Vector2:
@@ -41,9 +39,14 @@ func Spawn():
 	var pos = RandomPositions()
 	obj.position = pos
 	add_child(obj)
+	obj.dad = self
 	positions.append(pos)
 
 func _on_spawn_delay_timeout() -> void:
 	Spawn()
+
+func suicide(pos:Vector2):
+	var index = positions.find(pos)
+	positions.remove_at(index)
 	var delay = randf_range(minimumSpawnDelay, maximumSpawnDelay)
 	$SpawnDelay.start(delay)
