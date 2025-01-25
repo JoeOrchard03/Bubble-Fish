@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var net:Node
+var net_prefab = preload("res://Prefabs/net.tscn")
 
 var start_pos: Vector2 = Vector2(-1, -1)
 var final_pos: Vector2
@@ -30,8 +30,11 @@ func launch():
 		print("Final:")
 		print(final_pos)
 		
+		var net = net_prefab.instantiate()
+		add_child(net)
+		net.position = Vector2(1280, 1212)
 		
-		net.apply_central_impulse(launch_direction*(launch_force/5))
+		net.apply_central_impulse(launch_direction*(launch_force*1.7))
 		
 		start_pos = Vector2(-1, -1)
 		once = true
