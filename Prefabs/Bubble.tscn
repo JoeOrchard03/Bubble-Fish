@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://06mjrl5h1ntn"]
+[gd_scene load_steps=4 format=3 uid="uid://dhraq0e485r8t"]
 
 [ext_resource type="Texture2D" uid="uid://b4mv03diygoda" path="res://Art/Sprites/Bubble/real bubble proper scale.png" id="1_trk46"]
 [ext_resource type="Script" path="res://Prefabs/Bubble.gd" id="2_2v464"]
