@@ -2,6 +2,10 @@ extends Node2D
 
 var net_prefab = preload("res://Prefabs/net.tscn")
 
+var line
+
+@export var ship_pos = Vector2(1280, 1212)
+
 var start_pos: Vector2 = Vector2(-1, -1)
 var final_pos: Vector2
 
@@ -30,9 +34,12 @@ func launch():
 		print("Final:")
 		print(final_pos)
 		
+		
+		
+		
 		var net = net_prefab.instantiate()
 		add_child(net)
-		net.position = Vector2(1280, 1212)
+		net.position = ship_pos
 		
 		net.apply_central_impulse(launch_direction*(launch_force*1.7))
 		
@@ -41,6 +48,26 @@ func launch():
 		twice = false
 
 func _physics_process(delta: float) -> void:
+	if line != null:
+		line.queue_free()
+	if pressed:
+		line = Line2D.new()
+		add_child(line)
+		line.position = ship_pos
+		line.add_point(Vector2(0, 0))
+		var curve = Curve.new()
+		curve.add_point(Vector2(0.2, 0.2))
+		curve.add_point(Vector2(1, 1))
+		line.antialiased = true
+		line.end_cap_mode = Line2D.LINE_CAP_ROUND
+		line.begin_cap_mode = Line2D.LINE_CAP_ROUND
+		line.width_curve = curve
+		for i in 50:
+			var pos = (((start_pos-final_pos).normalized()*start_pos.distance_to(final_pos))/50)/i
+			line.add_point(pos)
+		
+		line.add_point((start_pos-final_pos).normalized()*start_pos.distance_to(final_pos))
+	
 	if twice:
 		launch()
 
