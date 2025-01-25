@@ -2,7 +2,7 @@ extends Node2D
 
 @export var net:Node
 
-var start_pos: Vector2
+var start_pos: Vector2 = Vector2(-1, -1)
 var final_pos: Vector2
 
 var launch_direction:Vector2
@@ -31,7 +31,7 @@ func launch():
 		print(final_pos)
 		
 		
-		net.apply_central_impulse(launch_direction*launch_force)
+		net.apply_central_impulse(launch_direction*(launch_force/5))
 		
 		start_pos = Vector2(-1, -1)
 		once = true
@@ -49,7 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			once = false
 	if event is InputEventScreenDrag or event is InputEventScreenTouch:
-		if start_pos == Vector2(-1, -1) or start_pos == null:
+		if start_pos == Vector2(-1, -1):
 			start_pos = event.position
 		final_pos = event.position
 			
