@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=4 format=3 uid="uid://biudnj2x84urg"]
 
-[ext_resource type="PackedScene" uid="uid://cbpok72dqco55" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
+[ext_resource type="PackedScene" uid="uid://bms5qcryqllt1" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
+[ext_resource type="PackedScene" uid="uid://duh2dly68o78c" path="res://Prefabs/BubbleSpawner.tscn" id="1_nro5v"]
+[ext_resource type="PackedScene" uid="uid://cy4byfq54digw" path="res://Prefabs/BubbleCounter.tscn" id="3_5alll"]
 
 [node name="MainSceneRoot" type="Node2D"]
 
 [node name="ControlLogic" parent="." instance=ExtResource("1_g8jgy")]
+
+[node name="BubbleSpawner" parent="." instance=ExtResource("1_nro5v")]
+
+[node name="BubbleCounter" parent="." instance=ExtResource("3_5alll")]

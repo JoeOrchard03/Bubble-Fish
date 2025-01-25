@@ -5,7 +5,7 @@ var randomSpawnPos
 var rng = RandomNumberGenerator.new()
 
 @export var numOfBubbles = 0
-@export var bubbleImgRadius = 85
+@export var bubbleImgRadius = 128
 @export var bubblePrefab = preload("res://Prefabs/Bubble.tscn")
 
 @export var minimumSpawnDelay = 0.5
@@ -14,8 +14,9 @@ var rng = RandomNumberGenerator.new()
 var positions:Array[Vector2] = []
 
 func _ready():
-	screenHeight = get_viewport().size
+	screenHeight = get_viewport().get_visible_rect().size
 	for i in numOfBubbles:
+		print(screenHeight)
 		Spawn()
 	
 
@@ -25,6 +26,7 @@ func RandomPositions() -> Vector2:
 		if not tooClose(pos):
 			return pos
 	return Vector2(0,0)
+			
 			
 func tooClose(queryPos) -> bool:
 	for i in positions:

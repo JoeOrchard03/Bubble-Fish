@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://rdam26yjqc8o" path="res://Art/Sprites/Bubble placeholder.svg" id="1_ivtlu"]
 [ext_resource type="Script" path="res://Prefabs/Bubble.gd" id="2_2v464"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_74acm"]
-size = Vector2(19.8174, 18.4908)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfdeo"]
+radius = 9.60013
 
 [node name="BubblePlaceholder" type="Sprite2D"]
 scale = Vector2(0.75, 0.75)
@@ -16,14 +16,14 @@ maxExistenceTime = 6
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.525, 3.02305)
-rotation = -3.14159
-scale = Vector2(17.2239, 18.6377)
-shape = SubResource("RectangleShape2D_74acm")
+position = Vector2(-1.33333, 0)
+scale = Vector2(17.5, 17.5)
+shape = SubResource("CircleShape2D_xfdeo")
 one_way_collision_margin = 0.0
 
 [node name="DeleteTimer" type="Timer" parent="."]
 wait_time = 1.616
 one_shot = true
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DeleteTimer" to="." method="_on_delete_timer_timeout"]

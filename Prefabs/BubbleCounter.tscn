@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy4byfq54digw"]
+
+[ext_resource type="Script" path="res://Prefabs/BubbleCounter.gd" id="1_magle"]
+
+[node name="BubbleCounter" type="Node2D"]
+script = ExtResource("1_magle")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 157.0
+offset_bottom = 19.0
+scale = Vector2(5.64, 5.64)
+text = "You have: 0 bubbles"

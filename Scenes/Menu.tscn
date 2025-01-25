@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://cb4n7grd537cw"]
+[gd_scene load_steps=3 format=3 uid="uid://cb4n7grd537cw"]
+
+[ext_resource type="Texture2D" uid="uid://dnemiv44po0tn" path="res://Art/title_screen_bubblefish.png" id="1_lel31"]
+[ext_resource type="Texture2D" uid="uid://b5yfoxquk4dlo" path="res://Art/title_screen_boxes.png" id="2_l142h"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TitleScreenBubblefish" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("1_lel31")
+
+[node name="TitleScreenBoxes" type="Sprite2D" parent="."]
+texture = ExtResource("2_l142h")
+centered = false
+
+[node name="Label" type="Label" parent="TitleScreenBoxes"]
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = -432.0
+offset_right = 534.0
+offset_bottom = -409.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(11.64, 11.64)
+text = "Play"

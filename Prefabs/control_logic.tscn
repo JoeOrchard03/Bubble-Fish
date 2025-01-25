@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbpok72dqco55"]
+[gd_scene load_steps=2 format=3 uid="uid://bms5qcryqllt1"]
 
 [ext_resource type="Script" path="res://Scripts/control_logic.gd" id="1_t85nt"]
 
