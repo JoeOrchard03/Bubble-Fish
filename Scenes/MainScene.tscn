@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=7 format=3 uid="uid://biudnj2x84urg"]
 
+[ext_resource type="PackedScene" uid="uid://fjob5pj86j6i" path="res://Prefabs/DayNightCycle.tscn" id="1_3edat"]
 [ext_resource type="PackedScene" uid="uid://bms5qcryqllt1" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
 [ext_resource type="PackedScene" uid="uid://duh2dly68o78c" path="res://Prefabs/BubbleSpawner.tscn" id="1_nro5v"]
 [ext_resource type="PackedScene" uid="uid://cy4byfq54digw" path="res://Prefabs/BubbleCounter.tscn" id="3_5alll"]
+[ext_resource type="Texture2D" uid="uid://bhw6mlxndqdn6" path="res://Art/Terrarium/Terrarium.png" id="5_nvhym"]
+[ext_resource type="PackedScene" uid="uid://dtkxakalcg6xd" path="res://Prefabs/boat.tscn" id="6_aw0w5"]
 
 [node name="MainSceneRoot" type="Node2D"]
+
+[node name="NightDayNOcircle" parent="." instance=ExtResource("1_3edat")]
 
 [node name="ControlLogic" parent="." instance=ExtResource("1_g8jgy")]
 
 [node name="BubbleSpawner" parent="." instance=ExtResource("1_nro5v")]
 
 [node name="BubbleCounter" parent="." instance=ExtResource("3_5alll")]
+
+[node name="Terrarium" type="Sprite2D" parent="."]
+texture = ExtResource("5_nvhym")
+centered = false
+
+[node name="Boat" parent="." instance=ExtResource("6_aw0w5")]

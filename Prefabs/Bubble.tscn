@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://06mjrl5h1ntn"]
 
-[ext_resource type="Texture2D" uid="uid://rdam26yjqc8o" path="res://Art/Sprites/Bubble placeholder.svg" id="1_ivtlu"]
+[ext_resource type="Texture2D" uid="uid://b4mv03diygoda" path="res://Art/Sprites/Bubble/real bubble proper scale.png" id="1_trk46"]
 [ext_resource type="Script" path="res://Prefabs/Bubble.gd" id="2_2v464"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfdeo"]
-radius = 9.60013
+radius = 8.60986
 
 [node name="BubblePlaceholder" type="Sprite2D"]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_ivtlu")
+texture = ExtResource("1_trk46")
 script = ExtResource("2_2v464")
 minExistenceTime = 2.0
 maxExistenceTime = 6
@@ -16,7 +15,7 @@ maxExistenceTime = 6
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.33333, 0)
+position = Vector2(4, -4)
 scale = Vector2(17.5, 17.5)
 shape = SubResource("CircleShape2D_xfdeo")
 one_way_collision_margin = 0.0

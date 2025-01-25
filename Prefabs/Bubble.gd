@@ -4,9 +4,17 @@ extends Sprite2D
 @export var maxExistenceTime = 5
 var currentCounter = 0
 
+var target_position
+
+var speed = 0.5
+
 var dad
 
+func _physics_process(delta: float) -> void:
+	position = position.lerp(target_position, speed * delta)
+
 func _ready():
+	target_position = global_position + Vector2(0, -2500)
 	# Start the timer when the scene or node is ready
 	var delay = randf_range(minExistenceTime, maxExistenceTime)
 	$DeleteTimer.start(delay)

@@ -39,7 +39,7 @@ func Spawn():
 	print("Running spawn")
 	var obj = bubblePrefab.instantiate()
 	var pos = RandomPositions()
-	obj.position = pos
+	obj.position = pos + Vector2(0, 1000)
 	add_child(obj)
 	obj.dad = self
 	positions.append(pos)
