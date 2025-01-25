@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		line.begin_cap_mode = Line2D.LINE_CAP_ROUND
 		line.width_curve = curve
 		for i in 50:
-			var pos = (((start_pos-final_pos).normalized()*start_pos.distance_to(final_pos))/50)/i
+			var pos = ((start_pos-final_pos).normalized()*((start_pos.distance_to(final_pos)/50)*i))
 			line.add_point(pos)
 		
 		line.add_point((start_pos-final_pos).normalized()*start_pos.distance_to(final_pos))
