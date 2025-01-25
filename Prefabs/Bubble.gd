@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	position = position.lerp(target_position, speed * delta)
 
 func _ready():
-	target_position = global_position + Vector2(0, -2500)
+	target_position = Vector2(global_position.x, -500)
 	# Start the timer when the scene or node is ready
 	var delay = randf_range(minExistenceTime, maxExistenceTime)
 	$DeleteTimer.start(delay)
@@ -25,9 +25,10 @@ func _on_delete_timer_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	var bubbleCounter = get_tree().root.get_node("MainSceneRoot/BubbleCounter")
-	bubbleCounter.counter = bubbleCounter.counter + 1
-	bubbleCounter.label.text = "You have: " + str(bubbleCounter.counter) + " bubbles"
-	dad.suicide(global_position)
-	queue_free()
-	print("Bubble hit")
+	if area.get_parent().name == "":
+		var bubbleCounter = get_tree().root.get_node("MainSceneRoot/BubbleCounter")
+		bubbleCounter.counter = bubbleCounter.counter + 1
+		bubbleCounter.label.text = "You have: " + str(bubbleCounter.counter) + " bubbles"
+		dad.suicide(global_position)
+		queue_free()
+		print("Bubble hit")

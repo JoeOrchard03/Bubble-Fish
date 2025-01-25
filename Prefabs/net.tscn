@@ -6,15 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdsa"]
 size = Vector2(128, 128)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Net" type="RigidBody2D"]
 gravity_scale = 2.5
+script = ExtResource("2_e31l4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bxdsa")
 
 [node name="Net" type="Sprite2D" parent="."]
 texture = ExtResource("1_3aoyx")
-script = ExtResource("2_e31l4")
 
 [node name="Area2D" type="Area2D" parent="."]
 
