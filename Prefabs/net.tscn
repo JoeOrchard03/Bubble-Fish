@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://7upowc3qaycv"]
 
-[ext_resource type="Texture2D" uid="uid://c4gc7m63ok14m" path="res://Art/Placeholder/icon.svg" id="1_3aoyx"]
+[ext_resource type="Texture2D" uid="uid://c4gc7m63ok14m" path="res://Art/Sprites/icon.svg" id="1_3aoyx"]
 [ext_resource type="Script" path="res://Scripts/net.gd" id="2_e31l4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdsa"]
 size = Vector2(128, 128)
 
 [node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bxdsa")

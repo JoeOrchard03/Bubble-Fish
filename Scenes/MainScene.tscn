@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=3 format=3 uid="uid://biudnj2x84urg"]
 
+[ext_resource type="PackedScene" uid="uid://fjob5pj86j6i" path="res://Prefabs/DayNightCycle.tscn" id="1_2ylu5"]
 [ext_resource type="PackedScene" uid="uid://cbpok72dqco55" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
 
 [node name="MainSceneRoot" type="Node2D"]
+
+[node name="NightDayNOcircle" parent="." instance=ExtResource("1_2ylu5")]
 
 [node name="ControlLogic" parent="." instance=ExtResource("1_g8jgy")]
