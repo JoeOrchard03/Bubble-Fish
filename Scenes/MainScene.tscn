@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=13 format=3 uid="uid://biudnj2x84urg"]
 
 [ext_resource type="PackedScene" uid="uid://fjob5pj86j6i" path="res://Prefabs/DayNightCycle.tscn" id="1_3edat"]
 [ext_resource type="PackedScene" uid="uid://bms5qcryqllt1" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
 [ext_resource type="PackedScene" uid="uid://duh2dly68o78c" path="res://Prefabs/BubbleSpawner.tscn" id="1_nro5v"]
-[ext_resource type="PackedScene" uid="uid://cy4byfq54digw" path="res://Prefabs/BubbleCounter.tscn" id="3_5alll"]
 [ext_resource type="Texture2D" uid="uid://bhw6mlxndqdn6" path="res://Art/Terrarium/Terrarium.png" id="5_nvhym"]
 [ext_resource type="PackedScene" uid="uid://dtkxakalcg6xd" path="res://Prefabs/boat.tscn" id="6_aw0w5"]
 [ext_resource type="Texture2D" uid="uid://dwf4cqqfcg8n6" path="res://Art/Terrarium/Terrarium cropped.png" id="6_hosko"]
@@ -11,16 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://dc5cqa6lhqcqb" path="res://Art/UI/menu_popupbox.png" id="9_longc"]
 [ext_resource type="Texture2D" uid="uid://l4id63d2v8kp" path="res://Art/UI/compendium_button.png" id="10_r7jdg"]
 [ext_resource type="Texture2D" uid="uid://fc0vlclp8ve1" path="res://Art/UI/exit_menu_button.png" id="11_l0lce"]
+[ext_resource type="PackedScene" uid="uid://mrgsxh533qjf" path="res://Prefabs/pufferpop_card.tscn" id="11_lxfmd"]
+[ext_resource type="PackedScene" uid="uid://bad2tw5yj2w01" path="res://Prefabs/ui.tscn" id="12_wnsvf"]
 
 [node name="MainSceneRoot" type="Node2D"]
 
 [node name="NightDayNOcircle" parent="." instance=ExtResource("1_3edat")]
 
-[node name="ControlLogic" parent="." instance=ExtResource("1_g8jgy")]
-
 [node name="BubbleSpawner" parent="." instance=ExtResource("1_nro5v")]
 
-[node name="BubbleCounter" parent="." instance=ExtResource("3_5alll")]
+[node name="PufferpopCard" parent="." instance=ExtResource("11_lxfmd")]
+
+[node name="ControlLogic" parent="." instance=ExtResource("1_g8jgy")]
 
 [node name="Terrarium" type="Sprite2D" parent="."]
 texture = ExtResource("5_nvhym")
@@ -34,6 +35,7 @@ texture_normal = ExtResource("6_hosko")
 
 [node name="TerrariumMenu" type="Node2D" parent="."]
 process_mode = 2
+visible = false
 script = ExtResource("6_n16aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="TerrariumMenu"]
@@ -47,6 +49,8 @@ texture_normal = ExtResource("11_l0lce")
 [node name="CompendiumButton" type="TouchScreenButton" parent="TerrariumMenu"]
 position = Vector2(1025, 413)
 texture_normal = ExtResource("10_r7jdg")
+
+[node name="UI" parent="." instance=ExtResource("12_wnsvf")]
 
 [connection signal="pressed" from="Terrarium/TouchScreenButton" to="TerrariumMenu" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TerrariumMenu/ExitButton" to="TerrariumMenu" method="_on_exit_button_pressed"]

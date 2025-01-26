@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://mrgsxh533qjf"]
 
 [ext_resource type="Texture2D" uid="uid://x574xvks2jqi" path="res://Art/UI/Pufferpop/pufferpop_card.png" id="1_rblei"]
-[ext_resource type="FontFile" uid="uid://by0cbqtih6ynd" path="res://Art/DynaPuff-VariableFont_wdth,wght.ttf" id="2_06iac"]
+[ext_resource type="FontFile" uid="uid://by0cbqtih6ynd" path="res://Art/UI/DynaPuff-VariableFont_wdth,wght.ttf" id="2_06iac"]
 [ext_resource type="Script" path="res://Scripts/pufferpop_card.gd" id="2_vlq3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijes2"]

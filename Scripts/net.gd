@@ -25,15 +25,17 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if !dad.net_caught:
-		#dad.start_pos = Vector2(-1, -1)
-		dad.reel_speed = 0
-		dad.RopePoint1 = Vector2(-1, -1)
-		dad.RopePoint2 = Vector2(-1, -1)
-		dad.RopePoint3 = Vector2(-1, -1)
-		gravity_scale = 0
-		caught = true
-		dad.net_caught = true
-		$Net.texture = load("res://Art/Nets/Closed Brown.png")
+		if area.get_parent().is_in_group("Bubbles"):
+			area.get_parent().die()
+			#dad.start_pos = Vector2(-1, -1)
+			dad.reel_speed = 0
+			dad.RopePoint1 = Vector2(-1, -1)
+			dad.RopePoint2 = Vector2(-1, -1)
+			dad.RopePoint3 = Vector2(-1, -1)
+			gravity_scale = 0
+			caught = true
+			dad.net_caught = true
+			$Net.texture = load("res://Art/Nets/Closed Brown.png")
 	
 
 func death():

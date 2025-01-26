@@ -33,6 +33,7 @@ var rare_img = [
 ]
 
 var legendary = ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
+var legendary_img = []
 
 var common_chance:float = 60
 var rare_chance:float = 30
@@ -52,6 +53,8 @@ var reward
 var reward_img = "res://Art/Sprites/icon.svg"
 var rarity:int = 0
 
+var fishIndex
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var reward_type = randf_range(0, 100)
@@ -62,21 +65,21 @@ func _ready() -> void:
 		
 		# Common
 		if chance <= common_chance:
-			var fishIndex = randi_range(0, common.size()-1)
-			reward = (common[fishIndex])
+			fishIndex = randi_range(0, common.size()-1)
+			reward = ("Common")
 			reward_img = common_img[fishIndex]
 			
 		# Rare
 		elif chance <= common_chance+rare_chance:
-			var fishIndex = randi_range(0, rare.size()-1)
-			reward = (rare[fishIndex])
+			fishIndex = randi_range(0, rare.size()-1)
+			reward = ("Rare")
 			reward_img = rare_img[fishIndex]
 			rarity = 1
 			
 		# Legendary
 		elif chance <= common_chance+rare_chance+legendary_chance:
-			var fishIndex = randi_range(0, legendary.size()-1)
-			reward = (legendary[fishIndex])
+			fishIndex = randi_range(0, legendary.size()-1)
+			reward = ("legendary")
 			rarity = 2
 	# Coin
 	elif reward_type <= fish_chance+coin_chance:
@@ -119,4 +122,26 @@ func _on_animation_finished() -> void:
 		$RewardSprite.scale = Vector2(0.1, 0.1)
 	elif rarity == -1: # Coins
 		$RewardSprite.scale = Vector2(0.3, 0.3)
+	if reward == "Silver Coin":
+		PlayerInfo.silver_coins+=15
+	elif reward == "Gold Coin":
+		PlayerInfo.gold_coins+=3
+	elif reward == "Common":
+		if !common[fishIndex] in PlayerInfo.common_fish:
+			PlayerInfo.common_fish.append(common[fishIndex])
+			PlayerInfo.common_fish_img.append(common_img[fishIndex])
+		else:
+			PlayerInfo.silver_coins+=10
+	elif reward == "Rare":
+		if !rare[fishIndex] in PlayerInfo.rare_fish:
+			PlayerInfo.rare_fish.append(rare[fishIndex])
+			PlayerInfo.rare_fish_img.append(rare_img[fishIndex])
+		else:
+			PlayerInfo.silver_coins+=25
+	elif reward == "Legendary":
+		if !legendary[fishIndex] in PlayerInfo.legendary_fish:
+			PlayerInfo.legendary_fish.append(legendary[fishIndex])
+			PlayerInfo.legendary_fish_img.append(legendary_img[fishIndex])
+		else:
+			PlayerInfo.gold_coins+=5
 	

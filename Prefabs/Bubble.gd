@@ -23,7 +23,10 @@ func _ready():
 	target_position = Vector2(global_position.x+x_offset, -600)
 	$AnimationPlayer.speed_scale = randf_range(1, 2.5)
 	
-	
+func die():
+		dad.Spawn()
+		queue_free()
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "net" and !area.get_parent().caught:
 		dad.Spawn()
