@@ -8,7 +8,7 @@ var slow_down:float = 5
 func _process(delta: float) -> void:
 	if caught:
 		linear_velocity = lerp(linear_velocity, Vector2(0, 0), slow_down*delta)
-		$Net.look_at(Vector2(1280, 1212))
+		$Net.look_at(dad.ship_pos)
 		$Net.rotation_degrees-=180
 		dad.RopePoint1 = $Net/RopePoint1.global_position
 		dad.RopePoint2 = $Net/RopePoint2.global_position

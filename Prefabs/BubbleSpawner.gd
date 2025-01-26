@@ -43,6 +43,3 @@ func _on_spawn_delay_timeout() -> void:
 	obj.position = pos
 	add_child(obj)
 	obj.dad = self
-
-func suicide(pos:Vector2):
-	var delay = randf_range(minimumSpawnDelay, maximumSpawnDelay)

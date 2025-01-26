@@ -80,6 +80,7 @@ func _physics_process(delta: float) -> void:
 		if RopePoint2.distance_to(ship_pos) <= reel_success_proximity:
 			
 			net.death()
+			PlayerInfo.current_bubbles += 1
 		net.linear_velocity = RopePoint2.direction_to(ship_pos).normalized()*(reel_speed*reel_speed_multiplier*delta)
 		
 		

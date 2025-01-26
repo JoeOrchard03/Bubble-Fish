@@ -24,17 +24,7 @@ func _ready():
 	$AnimationPlayer.speed_scale = randf_range(1, 2.5)
 	
 	
-
-func _on_delete_timer_timeout() -> void:
-	dad.suicide(global_position)
-	queue_free()  # Deletes the current node
-
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().name == "net":
-		var bubbleCounter = get_tree().root.get_node("MainSceneRoot/BubbleCounter")
-		bubbleCounter.counter = bubbleCounter.counter + 1
-		bubbleCounter.label.text = "You have: " + str(bubbleCounter.counter) + " bubbles"
-		dad.suicide(global_position)
+	if area.get_parent().name == "net" and !area.get_parent().caught:
+		dad.Spawn()
 		queue_free()
-		print("Bubble hit")
