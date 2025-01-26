@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=16 format=3 uid="uid://biudnj2x84urg"]
 
 [ext_resource type="PackedScene" uid="uid://fjob5pj86j6i" path="res://Prefabs/DayNightCycle.tscn" id="1_3edat"]
 [ext_resource type="PackedScene" uid="uid://bms5qcryqllt1" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://l4id63d2v8kp" path="res://Art/UI/compendium_button.png" id="10_r7jdg"]
 [ext_resource type="Texture2D" uid="uid://fc0vlclp8ve1" path="res://Art/UI/exit_menu_button.png" id="11_l0lce"]
 [ext_resource type="PackedScene" uid="uid://mrgsxh533qjf" path="res://Prefabs/pufferpop_card.tscn" id="11_lxfmd"]
+[ext_resource type="Texture2D" uid="uid://clapj3vtvjtmi" path="res://Art/UI/how_to_play_button.png" id="12_303tq"]
+[ext_resource type="Texture2D" uid="uid://b3365k1ppnq1v" path="res://Art/UI/how_to_play_box.png" id="12_d6g6t"]
 [ext_resource type="PackedScene" uid="uid://bad2tw5yj2w01" path="res://Prefabs/ui.tscn" id="12_wnsvf"]
+[ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="13_7utj1"]
 
 [node name="MainSceneRoot" type="Node2D"]
 
@@ -52,5 +55,21 @@ texture_normal = ExtResource("10_r7jdg")
 
 [node name="UI" parent="." instance=ExtResource("12_wnsvf")]
 
+[node name="HowToPlayUI" type="Sprite2D" parent="."]
+process_mode = 2
+visible = false
+position = Vector2(1280, 720)
+texture = ExtResource("12_d6g6t")
+script = ExtResource("13_7utj1")
+
+[node name="ExitButton" type="TouchScreenButton" parent="HowToPlayUI"]
+position = Vector2(724, -495)
+texture_normal = ExtResource("11_l0lce")
+
+[node name="HowToPlaybutton" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("12_303tq")
+
 [connection signal="pressed" from="Terrarium/TouchScreenButton" to="TerrariumMenu" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TerrariumMenu/ExitButton" to="TerrariumMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HowToPlayUI/ExitButton" to="HowToPlayUI" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HowToPlaybutton" to="HowToPlayUI" method="_on_how_to_playbutton_pressed"]
