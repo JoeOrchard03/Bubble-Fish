@@ -6,7 +6,7 @@ func _on_exit_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_how_to_play_button_pressed() -> void:
+func _on_how_to_playbutton_pressed() -> void:
 	get_tree().paused = true
 	show()
 	print("How to play pressed")
