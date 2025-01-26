@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://biudnj2x84urg"]
+[gd_scene load_steps=15 format=3 uid="uid://biudnj2x84urg"]
 
 [ext_resource type="PackedScene" uid="uid://fjob5pj86j6i" path="res://Prefabs/DayNightCycle.tscn" id="1_3edat"]
 [ext_resource type="PackedScene" uid="uid://bms5qcryqllt1" path="res://Prefabs/control_logic.tscn" id="1_g8jgy"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dc5cqa6lhqcqb" path="res://Art/UI/menu_popupbox.png" id="9_longc"]
 [ext_resource type="Texture2D" uid="uid://l4id63d2v8kp" path="res://Art/UI/compendium_button.png" id="10_r7jdg"]
 [ext_resource type="Texture2D" uid="uid://fc0vlclp8ve1" path="res://Art/UI/exit_menu_button.png" id="11_l0lce"]
+[ext_resource type="Texture2D" uid="uid://clapj3vtvjtmi" path="res://Art/UI/how_to_play_button.png" id="12_303tq"]
+[ext_resource type="Texture2D" uid="uid://b3365k1ppnq1v" path="res://Art/UI/how_to_play_box.png" id="12_d6g6t"]
+[ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="13_7utj1"]
 
 [node name="MainSceneRoot" type="Node2D"]
 
@@ -34,6 +37,7 @@ texture_normal = ExtResource("6_hosko")
 
 [node name="TerrariumMenu" type="Node2D" parent="."]
 process_mode = 2
+visible = false
 script = ExtResource("6_n16aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="TerrariumMenu"]
@@ -48,5 +52,22 @@ texture_normal = ExtResource("11_l0lce")
 position = Vector2(1025, 413)
 texture_normal = ExtResource("10_r7jdg")
 
+[node name="HowToPlayButton" type="TouchScreenButton" parent="."]
+position = Vector2(0, 99)
+texture_normal = ExtResource("12_303tq")
+
+[node name="HowToPlay" type="Sprite2D" parent="HowToPlayButton"]
+process_mode = 2
+visible = false
+position = Vector2(1280, 621)
+texture = ExtResource("12_d6g6t")
+script = ExtResource("13_7utj1")
+
+[node name="ExitButton" type="TouchScreenButton" parent="HowToPlayButton/HowToPlay"]
+position = Vector2(715, -497)
+texture_normal = ExtResource("11_l0lce")
+
 [connection signal="pressed" from="Terrarium/TouchScreenButton" to="TerrariumMenu" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TerrariumMenu/ExitButton" to="TerrariumMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="HowToPlayButton/HowToPlay" method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton/HowToPlay/ExitButton" to="HowToPlayButton/HowToPlay" method="_on_exit_button_pressed"]
