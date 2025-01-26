@@ -104,6 +104,12 @@ func _ready() -> void:
 	# Cosmetic
 	elif reward_type <= fish_chance+coin_chance+cosmetic_chance:
 		reward = ("Cosmetic")
+		rarity = -2
+		var chance = randf_range(0, 100)
+		if chance <= 50:
+			reward_img = "res://Art/Backgrounds/ALT 1 Night and day.png"
+		else:
+			reward_img = "res://Art/Backgrounds/ALT 2 Night and day.png"
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -129,6 +135,8 @@ func _on_animation_finished() -> void:
 		$RewardSprite.scale = Vector2(0.2, 0.2)
 	elif rarity == -1: # Coins
 		$RewardSprite.scale = Vector2(0.3, 0.3)
+	elif rarity == -2: # Cosmetics
+		$RewardSprite.scale = Vector2(0.05, 0.05)
 	if reward == "Silver Coin":
 		PlayerInfo.silver_coins+=15
 	elif reward == "Gold Coin":
@@ -151,4 +159,8 @@ func _on_animation_finished() -> void:
 			PlayerInfo.legendary_fish_img.append(legendary_img[fishIndex])
 		else:
 			PlayerInfo.gold_coins+=5
-	
+	elif reward == "Cosmetic":
+		if !reward_img in PlayerInfo.backgrounds:
+			PlayerInfo.backgrounds.append(reward_img)
+		else:
+			PlayerInfo.gold_coins+=2

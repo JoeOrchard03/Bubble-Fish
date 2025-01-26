@@ -20,6 +20,8 @@ var pufferpop_button_ref:Node
 
 var timer:Timer
 
+var backgrounds = ["res://Art/Backgrounds/NightDay_NOcircle.png"]
+
 func _process(delta: float) -> void:
 	if nets <= 0:
 		if timer == null:
