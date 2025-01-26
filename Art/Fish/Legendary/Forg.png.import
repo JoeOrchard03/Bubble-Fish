@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxsxxgcy0lqoi"
-path="res://.godot/imported/Flappy Birb.png-b712b82bdacc7c31628069e1573fd11c.ctex"
+uid="uid://w0j178dv40b4"
+path="res://.godot/imported/Forg.png-7f22854acf7c374832164e4ed93ec6bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Fish/Rare/Flappy Birb.png"
-dest_files=["res://.godot/imported/Flappy Birb.png-b712b82bdacc7c31628069e1573fd11c.ctex"]
+source_file="res://Art/Fish/Legendary/Forg.png"
+dest_files=["res://.godot/imported/Forg.png-7f22854acf7c374832164e4ed93ec6bc.ctex"]
 
 [params]
 

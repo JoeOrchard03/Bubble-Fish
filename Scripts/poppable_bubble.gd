@@ -1,29 +1,30 @@
 extends AnimatedSprite2D
 
-var common = ["Sporkle", "Car", "Munchy", "Puppy", "Cutlery", "Frog", "Dementia", "Pinoccio", "Hermie", "Angle", "Fernando", "Glorbo", "Aeuh", "Funny Man", "Goldfish"]
+var common = ["Angle", "Car", "Cutlery", "Dementia", "Fernando", "Frog", "Funny Man", "Glorbo", "Goldfish", "Hermie", "Munchy", "Pinoccio", "Puppy", "Sporkle", "Aeuh"]
 var common_img = [
-	"res://Art/Fish/Common/Sporkle.png", 
-	"res://Art/Fish/Common/Car.png",
-	"res://Art/Fish/Common/Munchy.png",
-	"res://Art/Fish/Common/Puppy.png",
-	"res://Art/Fish/Common/Cutlery.png",
-	"res://Art/Fish/Common/Frog.png",
-	"res://Art/Fish/Common/Dementia.png",
-	"res://Art/Fish/Common/Pinoccio.png",
-	"res://Art/Fish/Common/Hermie.png",
 	"res://Art/Fish/Common/Angle.png",
+	"res://Art/Fish/Common/Car.png",
+	"res://Art/Fish/Common/Cutlery.png",
+	"res://Art/Fish/Common/Dementia.png",
 	"res://Art/Fish/Common/Fernando.png",
-	"res://Art/Fish/Common/Glorbo.png",
-	"res://Art/Fish/Common/æuh.png",
+	"res://Art/Fish/Common/Frog.png",
 	"res://Art/Fish/Common/FunnyMan.png",
-	"res://Art/Fish/Common/Goldfish Sprite.png"
+	"res://Art/Fish/Common/Glorbo.png",
+	"res://Art/Fish/Common/Goldfish Sprite.png",
+	"res://Art/Fish/Common/Hermie.png",
+	"res://Art/Fish/Common/Munchy.png",
+	"res://Art/Fish/Common/Pinoccio.png",
+	"res://Art/Fish/Common/Puppy.png",
+	"res://Art/Fish/Common/Sporkle.png",
+	"res://Art/Fish/Common/æuh.png"
 ]
 
-var rare = ["Bathbomb", "Beach", "Cronch", "Flappy Birb", "Gorgan", "Moomoo", "Norton", "Scrimblo", "Slormp"]
+var rare = ["Bathbomb", "Beach", "Cronch", "Doggo", "Flappy Birb", "Gorgan", "Moomoo", "Norton", "Scrimblo", "Slormp"]
 var rare_img = [
 	"res://Art/Fish/Rare/Bathbomb.png",
 	"res://Art/Fish/Rare/Beach.png",
 	"res://Art/Fish/Rare/Cronch.png",
+	"res://Art/Fish/Rare/Doggo.png",
 	"res://Art/Fish/Rare/Flappy Birb.png",
 	"res://Art/Fish/Rare/Gorgan.png",
 	"res://Art/Fish/Rare/Moomoo.png",
@@ -32,8 +33,13 @@ var rare_img = [
 	"res://Art/Fish/Rare/Slormp.png"
 ]
 
-var legendary = ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
-var legendary_img = []
+var legendary = ["Beepo", "Eaten The Rich", "Forg", "Shork"]
+var legendary_img = [
+	"res://Art/Fish/Legendary/Beepo.png",
+	"res://Art/Fish/Legendary/Eaten the rich.png",
+	"res://Art/Fish/Legendary/Forg.png",
+	"res://Art/Fish/Legendary/Shork .png"
+]
 
 var common_chance:float = 60
 var rare_chance:float = 30
@@ -79,7 +85,8 @@ func _ready() -> void:
 		# Legendary
 		elif chance <= common_chance+rare_chance+legendary_chance:
 			fishIndex = randi_range(0, legendary.size()-1)
-			reward = ("legendary")
+			reward = ("Legendary")
+			reward_img = legendary_img[fishIndex]
 			rarity = 2
 	# Coin
 	elif reward_type <= fish_chance+coin_chance:
@@ -119,7 +126,7 @@ func _on_animation_finished() -> void:
 		$RewardSprite.scale = Vector2(0.4, 0.4)
 	elif rarity == 2:
 		box.texture = load("res://Art/UI/Pufferpop/legendary_fish_box.png")
-		$RewardSprite.scale = Vector2(0.1, 0.1)
+		$RewardSprite.scale = Vector2(0.2, 0.2)
 	elif rarity == -1: # Coins
 		$RewardSprite.scale = Vector2(0.3, 0.3)
 	if reward == "Silver Coin":

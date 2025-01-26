@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxsxxgcy0lqoi"
-path="res://.godot/imported/Flappy Birb.png-b712b82bdacc7c31628069e1573fd11c.ctex"
+uid="uid://dd6gnved8v2ob"
+path="res://.godot/imported/Shork .png-f5d1687cd86fbbb8a42678f1d49d3cd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Fish/Rare/Flappy Birb.png"
-dest_files=["res://.godot/imported/Flappy Birb.png-b712b82bdacc7c31628069e1573fd11c.ctex"]
+source_file="res://Art/Fish/Legendary/Shork .png"
+dest_files=["res://.godot/imported/Shork .png-f5d1687cd86fbbb8a42678f1d49d3cd4.ctex"]
 
 [params]
 

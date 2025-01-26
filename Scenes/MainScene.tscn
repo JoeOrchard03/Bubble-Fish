@@ -71,5 +71,6 @@ texture_normal = ExtResource("12_303tq")
 
 [connection signal="pressed" from="Terrarium/TouchScreenButton" to="TerrariumMenu" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TerrariumMenu/ExitButton" to="TerrariumMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TerrariumMenu/CompendiumButton" to="TerrariumMenu" method="_on_compendium_button_pressed"]
 [connection signal="pressed" from="HowToPlayUI/ExitButton" to="HowToPlayUI" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HowToPlaybutton" to="HowToPlayUI" method="_on_how_to_playbutton_pressed"]

@@ -22,3 +22,8 @@ func _on_exit_button_pressed() -> void:
 	get_tree().paused = false
 	hide()
 	pass # Replace with function body.
+
+
+func _on_compendium_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Compendium.tscn")
