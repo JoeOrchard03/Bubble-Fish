@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnemiv44po0tn"
-path="res://.godot/imported/title_screen_bubblefish.png-c73f2378769994b519d71af572c845d7.ctex"
+uid="uid://dxy1s0mue6k36"
+path="res://.godot/imported/item_box.png-5e26169af05026ba743ad68b42763564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/title_screen_bubblefish.png"
-dest_files=["res://.godot/imported/title_screen_bubblefish.png-c73f2378769994b519d71af572c845d7.ctex"]
+source_file="res://Art/UI/item_box.png"
+dest_files=["res://.godot/imported/item_box.png-5e26169af05026ba743ad68b42763564.ctex"]
 
 [params]
 

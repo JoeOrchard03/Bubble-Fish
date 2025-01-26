@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvquwt4ot8733"]
+
+[ext_resource type="Texture2D" uid="uid://d3tp7opbgnwwa" path="res://Art/Backgrounds/NightDay_NOcircle.png" id="1_ml546"]
+[ext_resource type="Texture2D" uid="uid://dbbthglupdt3i" path="res://Art/UI/compendium_popup_box.png" id="2_b0ajl"]
+[ext_resource type="Texture2D" uid="uid://dxy1s0mue6k36" path="res://Art/UI/item_box.png" id="3_0u7i3"]
+
+[node name="Compendium" type="Node2D"]
+
+[node name="NightDayNOcircle" type="Sprite2D" parent="."]
+position = Vector2(1391, 682)
+texture = ExtResource("1_ml546")
+
+[node name="CompendiumPopupBox" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("2_b0ajl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CompendiumPopupBox"]
+offset_left = -798.0
+offset_top = -320.0
+offset_right = 803.0
+offset_bottom = 425.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CompendiumPopupBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect"]
+offset_left = 550.0
+offset_right = 1046.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect"]
+offset_left = 1077.0
+offset_right = 1573.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect2"]
+offset_left = 550.0
+offset_right = 1046.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect2"]
+offset_left = 1077.0
+offset_right = 1573.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect3"]
+offset_left = 550.0
+offset_right = 1046.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect3"]
+offset_left = 1077.0
+offset_right = 1573.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect4"]
+offset_left = 550.0
+offset_right = 1046.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CompendiumPopupBox/ScrollContainer/VBoxContainer/TextureRect4"]
+offset_left = 1077.0
+offset_right = 1573.0
+offset_bottom = 480.0
+texture = ExtResource("3_0u7i3")
+stretch_mode = 2
