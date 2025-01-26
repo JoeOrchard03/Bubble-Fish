@@ -10,3 +10,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$SilverCoins/SilverCoinsLabel.text = "x" + str(PlayerInfo.silver_coins)
 	$GoldCoins/GoldCoinsLabel.text = "x" + str(PlayerInfo.gold_coins)
+	$Nets/NetsLabel.text = "x" + str(PlayerInfo.nets)

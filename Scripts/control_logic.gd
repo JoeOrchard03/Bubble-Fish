@@ -48,29 +48,30 @@ func _ready() -> void:
 func launch():
 	if !once:
 		if !net_active:
-			
-			launch_direction = (start_pos-final_pos).normalized()
-			launch_force = start_pos.distance_to(final_pos)
-			print("-------Launch-------")
-			print("Direction:")
-			print(launch_direction)
-			print("Force:")
-			print(launch_force)
-			print("Start:")
-			print(start_pos)
-			print("Final:")
-			print(final_pos)
+			if PlayerInfo.nets > 0:
+				PlayerInfo.nets -= 1
+				launch_direction = (start_pos-final_pos).normalized()
+				launch_force = start_pos.distance_to(final_pos)
+				print("-------Launch-------")
+				print("Direction:")
+				print(launch_direction)
+				print("Force:")
+				print(launch_force)
+				print("Start:")
+				print(start_pos)
+				print("Final:")
+				print(final_pos)
 
-			net = net_prefab.instantiate()
-			net.name = "net"
-			add_child(net)
-			net.dad = self
-			net_active = true
-			net.position = ship_pos
-			
-			net.apply_central_impulse(launch_direction*(launch_force*1.7))
-			
-			start_pos = Vector2(-1, -1)
+				net = net_prefab.instantiate()
+				net.name = "net"
+				add_child(net)
+				net.dad = self
+				net_active = true
+				net.position = ship_pos
+				
+				net.apply_central_impulse(launch_direction*(launch_force*1.7))
+				
+				start_pos = Vector2(-1, -1)
 		once = true
 		twice = false
 
