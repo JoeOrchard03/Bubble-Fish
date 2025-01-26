@@ -43,7 +43,7 @@ _data = {
 "wobble": SubResource("Animation_h7sba")
 }
 
-[node name="BubblePlaceholder" type="Sprite2D"]
+[node name="BubblePlaceholder" type="Sprite2D" groups=["Bubbles"]]
 skew = -0.122173
 texture = ExtResource("1_trk46")
 script = ExtResource("2_2v464")

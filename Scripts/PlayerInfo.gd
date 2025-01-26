@@ -12,3 +12,6 @@ var silver_coins:int = 0
 var gold_coins:int = 0
 
 var current_bubbles:int = 0
+
+var control_logic_ref:Node
+var pufferpop_button_ref:Node

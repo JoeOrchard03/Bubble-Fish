@@ -42,6 +42,9 @@ var RopePoint1:Vector2
 var RopePoint2:Vector2
 var RopePoint3:Vector2
 
+func _ready() -> void:
+	PlayerInfo.control_logic_ref = self
+
 func launch():
 	if !once:
 		if !net_active:
@@ -168,18 +171,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			last_reel_pos = event.position
 	else:
-		if event is InputEventScreenTouch:
-			if !was_caught:
-				pressed = event.pressed
-				if !pressed:
-					twice = true
+		if !PlayerInfo.pufferpop_button_ref.handled:
+			if event is InputEventScreenTouch:
+				if !was_caught:
+					pressed = event.pressed
+					if !pressed:
+						twice = true
+					else:
+						once = false
 				else:
-					once = false
-			else:
-				start_pos = Vector2(-1, -1)
-			was_caught = false
-		if event is InputEventScreenDrag or event is InputEventScreenTouch:
-			if start_pos == Vector2(-1, -1):
-				start_pos = event.position
-			final_pos = event.position
-				
+					start_pos = Vector2(-1, -1)
+				was_caught = false
+			if event is InputEventScreenDrag or event is InputEventScreenTouch:
+				if start_pos == Vector2(-1, -1):
+					start_pos = event.position
+				final_pos = event.position
+					

@@ -35,6 +35,10 @@ folder_colors={
 "res://Scripts/": "red"
 }
 
+[global_group]
+
+Bubbles=""
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
