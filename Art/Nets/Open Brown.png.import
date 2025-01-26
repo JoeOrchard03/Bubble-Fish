@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm28ejg337fnk"
-path="res://.godot/imported/Net test.png-7be808fea2bada7712f3808752d1b3e5.ctex"
+uid="uid://ychd7v4mssvv"
+path="res://.godot/imported/Open Brown.png-2de5f87d5ac17a7ae643f6f583a37a7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Nets/Net test.png"
-dest_files=["res://.godot/imported/Net test.png-7be808fea2bada7712f3808752d1b3e5.ctex"]
+source_file="res://Art/Nets/Open Brown.png"
+dest_files=["res://.godot/imported/Open Brown.png-2de5f87d5ac17a7ae643f6f583a37a7c.ctex"]
 
 [params]
 

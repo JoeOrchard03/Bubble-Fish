@@ -11,44 +11,38 @@ var rng = RandomNumberGenerator.new()
 @export var minimumSpawnDelay = 0.5
 @export var maximumSpawnDelay = 1
 
-var positions:Array[Vector2] = []
+var prev_section = -1
+
 
 func _ready():
-	screenHeight = get_viewport().get_visible_rect().size
-	for i in numOfBubbles:
-		print(screenHeight)
+	for i in 12:
 		Spawn()
-	
-
-func RandomPositions() -> Vector2:
-	while true:
-		var pos = Vector2(rng.randf_range(bubbleImgRadius, screenHeight.x - bubbleImgRadius), rng.randf_range(bubbleImgRadius, screenHeight.y - bubbleImgRadius))
-		if not tooClose(pos):
-			return pos
-	return Vector2(0,0)
-			
-			
-func tooClose(queryPos) -> bool:
-	for i in positions:
-		if queryPos.distance_to(i) < bubbleImgRadius * 2:
-			return true
-	return false
-		
 
 func Spawn():
-	print("Running spawn")
-	var obj = bubblePrefab.instantiate()
-	var pos = RandomPositions()
-	obj.position = pos + Vector2(0, 1000)
-	add_child(obj)
-	obj.dad = self
-	positions.append(pos)
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(randf_range(0, 8))
+	timer.connect("timeout", _on_spawn_delay_timeout)
+	
+	
 
 func _on_spawn_delay_timeout() -> void:
-	Spawn()
+	var obj = bubblePrefab.instantiate()
+	
+	var temp = -1
+	while temp == -1:
+		temp = randi_range(1, 6)
+		if temp == prev_section or temp+1 == prev_section or temp-1 == prev_section:
+			temp = -1
+	prev_section = temp
+	print(temp)
+	var pos = Vector2(((temp*373.3)-186.7)+randf_range(-186.7, 186.7)+160, 2000)
+	print(pos)
+	
+	obj.position = pos
+	add_child(obj)
+	obj.dad = self
 
 func suicide(pos:Vector2):
-	var index = positions.find(pos)
-	positions.remove_at(index)
 	var delay = randf_range(minimumSpawnDelay, maximumSpawnDelay)
-	$SpawnDelay.start(delay)

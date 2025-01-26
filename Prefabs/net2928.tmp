@@ -11,20 +11,7 @@ gravity_scale = 2.5
 script = ExtResource("2_e31l4")
 
 [node name="Net" type="Sprite2D" parent="."]
-rotation = 3.14159
 texture = ExtResource("2_ua4h2")
-
-[node name="RopePoint1" type="Node2D" parent="Net"]
-position = Vector2(-275, 86)
-rotation = 3.14159
-
-[node name="RopePoint2" type="Node2D" parent="Net"]
-position = Vector2(-275, 50)
-rotation = 3.14159
-
-[node name="RopePoint3" type="Node2D" parent="Net"]
-position = Vector2(-275, 12)
-rotation = 3.14159
 
 [node name="Area2D" type="Area2D" parent="."]
 

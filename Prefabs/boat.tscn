@@ -78,3 +78,6 @@ libraries = {
 "": SubResource("AnimationLibrary_jy2hy")
 }
 autoplay = "Rotate"
+
+[node name="BoatOffsetPos" type="Node2D" parent="."]
+position = Vector2(-10.013, -468.681)
