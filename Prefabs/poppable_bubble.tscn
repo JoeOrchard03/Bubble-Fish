@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://csi021gtk6hs3"]
+
+[ext_resource type="Texture2D" uid="uid://cwm67bqxwsq0k" path="res://Art/Sprites/Bubble/bubble even spread.png" id="1_tebh6"]
+[ext_resource type="Script" path="res://Scripts/poppable_bubble.gd" id="2_kexnq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od4n3"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(0, 0, 512, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vih1"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(512, 0, 512, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6snbi"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(1024, 0, 512, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_407kx"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(1536, 0, 512, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3a51"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(2048, 0, 512, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th1jn"]
+atlas = ExtResource("1_tebh6")
+region = Rect2(0, 0, 512, 448)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld4jr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od4n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vih1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6snbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_407kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3a51")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Pop",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th1jn")
+}],
+"loop": true,
+"name": &"Still",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4fxy"]
+radius = 149.0
+
+[node name="PoppableBubble" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ld4jr")
+animation = &"Still"
+offset = Vector2(-10, 25)
+script = ExtResource("2_kexnq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_a4fxy")
+
+[node name="RewardSprite" type="Sprite2D" parent="."]
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

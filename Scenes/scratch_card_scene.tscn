@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv1l8femr87wc"]
+
+[ext_resource type="PackedScene" uid="uid://csi021gtk6hs3" path="res://Prefabs/poppable_bubble.tscn" id="1_6drax"]
+[ext_resource type="Script" path="res://Scripts/scratch_card_scene.gd" id="1_e8c0g"]
+[ext_resource type="Texture2D" uid="uid://cq8glaidheqy1" path="res://Art/UI/Pufferpop/pufferpop_bg.png" id="2_0fp80"]
+[ext_resource type="Texture2D" uid="uid://x574xvks2jqi" path="res://Art/UI/Pufferpop/pufferpop_card.png" id="3_7d0mn"]
+[ext_resource type="Texture2D" uid="uid://dbdi5neyjswbh" path="res://Art/UI/Pufferpop/exit_menu_button.png" id="4_vc1uj"]
+[ext_resource type="Texture2D" uid="uid://cdtgslg77pdbw" path="res://Art/UI/Pufferpop/item_box.png" id="5_aha5v"]
+
+[node name="ScratchCardRootNode" type="Node2D"]
+script = ExtResource("1_e8c0g")
+
+[node name="PufferpopBg" type="Sprite2D" parent="."]
+texture = ExtResource("2_0fp80")
+centered = false
+
+[node name="PufferpopCard" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("3_7d0mn")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 2295.0
+offset_top = 56.0
+offset_right = 2503.0
+offset_bottom = 284.0
+size_flags_horizontal = 0
+icon = ExtResource("4_vc1uj")
+flat = true
+
+[node name="ItemBox" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox3" type="Sprite2D" parent="."]
+position = Vector2(1280, 445)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox3" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox2" type="Sprite2D" parent="."]
+position = Vector2(1280, 995)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox2" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox7" type="Sprite2D" parent="."]
+position = Vector2(1005, 720)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox7" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox8" type="Sprite2D" parent="."]
+position = Vector2(1005, 445)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox8" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox9" type="Sprite2D" parent="."]
+position = Vector2(1005, 995)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox9" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox4" type="Sprite2D" parent="."]
+position = Vector2(1555, 720)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox4" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox5" type="Sprite2D" parent="."]
+position = Vector2(1555, 445)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox5" instance=ExtResource("1_6drax")]
+
+[node name="ItemBox6" type="Sprite2D" parent="."]
+position = Vector2(1555, 995)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aha5v")
+
+[node name="PoppableBubble" parent="ItemBox6" instance=ExtResource("1_6drax")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
