@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://by0cbqtih6ynd"
-path="res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-5be312ad7afac860c0a197d0dd133727.fontdata"
+path="res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-da5b7461595f6b5c145ca99cd3c0fd5f.fontdata"
 
 [deps]
 
-source_file="res://Art/DynaPuff-VariableFont_wdth,wght.ttf"
-dest_files=["res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-5be312ad7afac860c0a197d0dd133727.fontdata"]
+source_file="res://Art/UI/DynaPuff-VariableFont_wdth,wght.ttf"
+dest_files=["res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-da5b7461595f6b5c145ca99cd3c0fd5f.fontdata"]
 
 [params]
 
