@@ -36,9 +36,7 @@ func _on_spawn_delay_timeout() -> void:
 		if temp == prev_section or temp+1 == prev_section or temp-1 == prev_section:
 			temp = -1
 	prev_section = temp
-	print(temp)
 	var pos = Vector2(((temp*373.3)-186.7)+randf_range(-186.7, 186.7)+160, 2000)
-	print(pos)
 	
 	obj.position = pos
 	add_child(obj)

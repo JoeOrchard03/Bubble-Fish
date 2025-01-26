@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5arok650dogo"
-path="res://.godot/imported/Net 1 sound 2.wav-d3925cf9636142d25a3fa465844f00f0.sample"
+path="res://.godot/imported/Net 1 sound 2.wav-c5e4623111c05b361e308c2f5051038f.sample"
 
 [deps]
 
-source_file="res://Audio/Net 1 sound 2.wav"
-dest_files=["res://.godot/imported/Net 1 sound 2.wav-d3925cf9636142d25a3fa465844f00f0.sample"]
+source_file="res://Audio/NetSounds/Net-1/Net 1 sound 2.wav"
+dest_files=["res://.godot/imported/Net 1 sound 2.wav-c5e4623111c05b361e308c2f5051038f.sample"]
 
 [params]
 

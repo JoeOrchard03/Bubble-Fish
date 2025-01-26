@@ -52,15 +52,15 @@ func launch():
 				PlayerInfo.nets -= 1
 				launch_direction = (start_pos-final_pos).normalized()
 				launch_force = start_pos.distance_to(final_pos)
-				print("-------Launch-------")
-				print("Direction:")
-				print(launch_direction)
-				print("Force:")
-				print(launch_force)
-				print("Start:")
-				print(start_pos)
-				print("Final:")
-				print(final_pos)
+				#print("-------Launch-------")
+				#print("Direction:")
+				#print(launch_direction)
+				#print("Force:")
+				#print(launch_force)
+				#print("Start:")
+				#print(start_pos)
+				#print("Final:")
+				#print(final_pos)
 
 				net = net_prefab.instantiate()
 				net.name = "net"
@@ -82,7 +82,6 @@ func _physics_process(delta: float) -> void:
 			reel3.queue_free()
 	if net_caught:
 		if RopePoint2.distance_to(ship_pos) <= reel_success_proximity:
-			
 			net.death()
 			PlayerInfo.current_bubbles += 1
 		net.linear_velocity = RopePoint2.direction_to(ship_pos).normalized()*(reel_speed*reel_speed_multiplier*delta)
@@ -174,8 +173,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		if !PlayerInfo.pufferpop_button_ref.handled:
 			if event is InputEventScreenTouch:
+				pressed = event.pressed
+				if pressed:
+					start_pos = Vector2(-1, -1)
 				if !was_caught:
-					pressed = event.pressed
+					
 					if !pressed:
 						twice = true
 					else:
