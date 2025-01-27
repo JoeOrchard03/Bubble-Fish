@@ -18,6 +18,8 @@ config/icon="res://Art/Sprites/icon.svg"
 [autoload]
 
 PlayerInfo="*res://Scripts/PlayerInfo.gd"
+BackgroundMusicPlayer="*res://Prefabs/background_music_player.tscn"
+EffectsPlayer="*res://Prefabs/effects_player.tscn"
 
 [display]
 

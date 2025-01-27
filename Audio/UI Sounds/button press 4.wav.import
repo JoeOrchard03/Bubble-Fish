@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db4pjtelpasc0"
+path="res://.godot/imported/button press 4.wav-0cbc5cf5ab14f4a9cbc13659b394f046.sample"
+
+[deps]
+
+source_file="res://Audio/UI Sounds/button press 4.wav"
+dest_files=["res://.godot/imported/button press 4.wav-0cbc5cf5ab14f4a9cbc13659b394f046.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

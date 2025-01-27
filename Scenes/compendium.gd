@@ -127,4 +127,6 @@ func show_fish(img_path:String, parent:Sprite2D, fish_name:String, fish_scale:Ve
 	fish.scale = fish_scale
 
 func _on_button_pressed() -> void:
+	EffectsPlayer.stream = load("res://Audio/UI Sounds/button press 4.wav")
+	EffectsPlayer.play()
 	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")

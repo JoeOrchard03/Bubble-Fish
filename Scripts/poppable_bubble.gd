@@ -61,6 +61,8 @@ var rarity:int = 0
 
 var fishIndex
 
+var pop_sound_player:AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var reward_type = randf_range(0, 100)
@@ -118,8 +120,24 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		print(reward)
 		play("Pop")
 		PlayerInfo.current_bubbles-=1
+		var rand_noise:int = randi_range(1, 5)
+		pop_sound_player = AudioStreamPlayer.new()
+		add_child(pop_sound_player)
+		pop_sound_player.connect("finished", sound_finished)
+		if rand_noise == 1:
+			pop_sound_player.stream = load("res://Audio/Popping/bubble popping 4.wav")
+		elif rand_noise == 2:
+			pop_sound_player.stream = load("res://Audio/Popping/bubble popping 6.wav")
+		elif rand_noise == 3:
+			pop_sound_player.stream = load("res://Audio/Popping/bubble popping 7.wav")
+		elif rand_noise == 4:
+			pop_sound_player.stream = load("res://Audio/Popping/bubbles popping 5.wav")
+		elif rand_noise == 5:
+			pop_sound_player.stream = load("res://Audio/Popping/bubbles popping.wav")
+		pop_sound_player.play()
 		
-	
+func sound_finished():
+	pop_sound_player.queue_free()
 
 
 func _on_animation_finished() -> void:

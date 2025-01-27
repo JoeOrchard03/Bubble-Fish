@@ -19,21 +19,6 @@ position = Vector2(-1676, -1073)
 texture = ExtResource("2_m8p3w")
 centered = false
 
-[node name="PriceBox" type="Sprite2D" parent="."]
-position = Vector2(268, 1347)
-scale = Vector2(1.66667, 1.66667)
-texture = ExtResource("4_hyolf")
-
-[node name="PriceBox2" type="Sprite2D" parent="."]
-position = Vector2(1738, 101)
-scale = Vector2(1.24444, 1.24444)
-texture = ExtResource("4_hyolf")
-
-[node name="PriceBox3" type="Sprite2D" parent="."]
-position = Vector2(2230, 101)
-scale = Vector2(1.24444, 1.24444)
-texture = ExtResource("4_hyolf")
-
 [node name="Button" type="Button" parent="."]
 offset_left = 106.0
 offset_top = 57.0

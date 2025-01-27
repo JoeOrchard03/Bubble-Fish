@@ -1,13 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://bad2tw5yj2w01"]
+[gd_scene load_steps=8 format=3 uid="uid://bad2tw5yj2w01"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_wyugp"]
+[ext_resource type="Texture2D" uid="uid://cgoqhiiyxeaus" path="res://Art/price_box.png" id="2_33bjj"]
 [ext_resource type="Texture2D" uid="uid://6spu3itou7ew" path="res://Art/UI/Coins/coin_silver.png" id="2_qjqtg"]
 [ext_resource type="FontFile" uid="uid://by0cbqtih6ynd" path="res://Art/UI/DynaPuff-VariableFont_wdth,wght.ttf" id="3_7xqjy"]
 [ext_resource type="Texture2D" uid="uid://dgd0snhf1mucn" path="res://Art/UI/Coins/coin_gold.png" id="3_afhcj"]
-[ext_resource type="Texture2D" uid="uid://ychd7v4mssvv" path="res://Art/Nets/Open Brown.png" id="5_p3jck"]
+[ext_resource type="Texture2D" uid="uid://cdawi8p1pacu6" path="res://Art/UI/NetCounter/Empty Net Bubble.png" id="5_ewjbv"]
+[ext_resource type="Texture2D" uid="uid://d2i01653qvh6q" path="res://Art/UI/NetCounter/Net bubble.png" id="5_ukp5i"]
 
 [node name="UI" type="Node2D"]
 script = ExtResource("1_wyugp")
+
+[node name="PriceBox" type="Sprite2D" parent="."]
+position = Vector2(284, 1311)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("2_33bjj")
+
+[node name="PriceBox2" type="Sprite2D" parent="."]
+position = Vector2(1738, 101)
+scale = Vector2(1.24444, 1.24444)
+texture = ExtResource("2_33bjj")
+
+[node name="PriceBox3" type="Sprite2D" parent="."]
+position = Vector2(2230, 101)
+scale = Vector2(1.24444, 1.24444)
+texture = ExtResource("2_33bjj")
 
 [node name="SilverCoins" type="Sprite2D" parent="."]
 position = Vector2(2060, 40)
@@ -39,17 +56,23 @@ theme_override_fonts/font = ExtResource("3_7xqjy")
 theme_override_font_sizes/font_size = 566
 text = "x100"
 
-[node name="Nets" type="Sprite2D" parent="."]
-position = Vector2(-0.999998, 1236)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_p3jck")
-centered = false
+[node name="Nets" type="TextureProgressBar" parent="."]
+offset_left = 28.0
+offset_top = 1212.0
+offset_right = 679.0
+offset_bottom = 1867.0
+scale = Vector2(0.315, 0.315)
+value = 100.0
+fill_mode = 5
+texture_under = ExtResource("5_ewjbv")
+texture_progress = ExtResource("5_ukp5i")
 
 [node name="NetsLabel" type="Label" parent="Nets"]
-offset_left = 642.5
-offset_top = 125.0
-offset_right = 1354.5
-offset_bottom = 486.0
+layout_mode = 0
+offset_left = 682.54
+offset_top = 171.429
+offset_right = 1394.54
+offset_bottom = 532.429
 theme_override_fonts/font = ExtResource("3_7xqjy")
 theme_override_font_sizes/font_size = 250
 text = "x100"

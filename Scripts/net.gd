@@ -4,6 +4,15 @@ var dad
 var caught:bool = false
 var slow_down:float = 5
 
+var pop_sound_player:AudioStreamPlayer
+
+func _ready() -> void:
+	pop_sound_player = AudioStreamPlayer.new()
+	add_child(pop_sound_player)
+	pop_sound_player.stream = load("res://Audio/NetSounds/net 3 sound 2.wav")
+	pop_sound_player.pitch_scale = randf_range(0.9, 1.5)
+	pop_sound_player.play()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if caught:

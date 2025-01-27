@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cgb1y7ajfu6lb"]
+
+[node name="EffectsPlayer" type="AudioStreamPlayer"]
+process_mode = 3
