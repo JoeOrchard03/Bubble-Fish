@@ -116,7 +116,7 @@ func _ready() -> void:
 		elif fishString == "Shork":
 			fish_node = Shork
 		if fish_node != null:
-			show_fish(PlayerInfo.legendary_fish_img[i], fish_node, fishString, Vector2(0.2, 0.2))
+			show_fish(PlayerInfo.legendary_fish_img[i], fish_node, fishString, Vector2(0.3, 0.3))
 		
 		
 func show_fish(img_path:String, parent:Sprite2D, fish_name:String, fish_scale:Vector2):

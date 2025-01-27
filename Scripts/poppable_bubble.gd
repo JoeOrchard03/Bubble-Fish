@@ -150,7 +150,7 @@ func _on_animation_finished() -> void:
 		$RewardSprite.scale = Vector2(0.4, 0.4)
 	elif rarity == 2:
 		box.texture = load("res://Art/UI/Pufferpop/legendary_fish_box.png")
-		$RewardSprite.scale = Vector2(0.2, 0.2)
+		$RewardSprite.scale = Vector2(0.3, 0.3)
 	elif rarity == -1: # Coins
 		$RewardSprite.scale = Vector2(0.3, 0.3)
 	elif rarity == -2: # Cosmetics
